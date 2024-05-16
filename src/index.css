@@ -1,0 +1,70 @@
+body {
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+  word-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  text-rendering: geometricPrecision;
+  color: #152536;
+  background-color: #ebeae9;
+}
+
+html,
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  width: 100%;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  outline: transparent none 0px;
+  outline-offset: 0;
+  border: 0px none transparent;
+  padding: 0;
+  font-weight: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  color: inherit;
+  word-spacing: inherit;
+  letter-spacing: inherit;
+  text-rendering: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  list-style: none;
+  background: transparent;
+}
+
+.perfect-scrollbar {
+  overflow: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    height: 56px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    background-color: hsl(0, 0%, 37%);
+    cursor: pointer;
+  }
+}
