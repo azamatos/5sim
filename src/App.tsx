@@ -31,7 +31,7 @@ function App() {
 
   // queries
   const { countries } = useGetCountriesQuery();
-  const { prices, isLoading, handleRefresh } = useGetPricesQuery({
+  const { prices, isLoading } = useGetPricesQuery({
     country: filters.country || undefined,
     product: filters.product,
   });
@@ -44,6 +44,11 @@ function App() {
 
   const toggleAvailableFilter = () => {
     setAvailableFilter(!availableFilter);
+  };
+
+  const handleClearFilters = () => {
+    setFilters(initialFilters);
+    setAvailableFilter(false);
   };
 
   const filteredPrices = useMemo(() => {
@@ -74,7 +79,7 @@ function App() {
         flexDirection: "column",
         gap: 5,
         width: 1024,
-        minHeight: 300,
+        minHeight: 350,
         maxHeight: "calc(100vh - 64px)",
       }}
     >
@@ -157,7 +162,7 @@ function App() {
       <DiagramListActions
         isAvailableFilterOpen={availableFilter}
         toggleAvailableFilter={toggleAvailableFilter}
-        handleRefreshList={handleRefresh}
+        handleRefreshList={handleClearFilters}
       />
       <DiagramList
         isLoading={isLoading}
